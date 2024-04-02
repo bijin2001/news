@@ -80,66 +80,29 @@
                 data.articles.forEach(artic =>
 
                     output.innerHTML += `
-                
-                <div class="card" style="width: 18rem;">
-        <img src="${artic.urlToImage}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${artic.title}</h5>
-          <p class="card-text"><i>source</i></p>
-          <p class="card-text" style="font-size: 15px; font-weight: 600; color: gray;">${artic.publishedAt}</p>
+                                    <div class="card" style="width: 18rem;">
+                                            <img width="286px" height="150px" src="${artic.urlToImage}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${artic.title}</h5>
+                                            <p class="card-text"><i>source</i></p>
+                                            <p class="card-text" style="font-size: 15px; font-weight: 600; color: gray;">${artic.publishedAt}</p>
 
-          <p>
-            ${artic.description}
-          </p>
-          <a href="${artic.url}" style="text-decoration: none;">Read More</a>
-          </div>
-      </div>   
+                                            <p>
+                                                ${artic.description}
+                                            </p>
+                                            <a href="${artic.url}" style="text-decoration: none;">Read More</a>
+                                            </div>
+                                        </div> 
+                                        
 
-      `
+                                        
+
+                                        `
                 )
             })
         })
 
     }
-
-    searchNew = () => {
-
-
-        fetch(`https://newsapi.org/v2/top-headlines?country=${sear}&query=${srh}&apiKey=f413309d09984b568a6444b7b3196ee3`).then((value) => {
-
-value.json().then(data => {
-
-    let n
-    for(n=1; n<=5; n++ )
-
-    output.innerHTML = ''
-
-    data.articles.forEach(artic =>
-
-        output.innerHTML += `
-    
-    <div class="card" style="width: 18rem;">
-<img src="${artic.urlToImage}" class="card-img-top" alt="...">
-<div class="card-body">
-<h5 class="card-title">${artic.title}</h5>
-<p class="card-text"><i>source</i></p>
-<p class="card-text" style="font-size: 15px; font-weight: 600; color: gray;">${artic.publishedAt}</p>
-
-<p>
-${artic.description}
-</p>
-<a href="${artic.url}" style="text-decoration: none;">Read More</a>
-</div>
-</div>   
-
-`
-    )
-})
-})
-
-}
-
-
 
 
 
